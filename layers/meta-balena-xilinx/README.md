@@ -5,3 +5,4 @@ This repository enables building balenaOS for Xilinx machines.
 
 ## Supported machines
 * zedboard-zynq7
+* qemu-zynq7
