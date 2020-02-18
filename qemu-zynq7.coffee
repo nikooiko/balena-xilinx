@@ -5,6 +5,7 @@ module.exports =
 	name: 'QEMU zynq7'
 	arch: 'armv7hf'
 	isDefault: true
+	state: 'experimental'
 
 	yocto:
 		machine: 'qemu-zynq7'

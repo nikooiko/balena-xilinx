@@ -5,6 +5,7 @@ module.exports =
 	name: 'Avnet Zedboard'
 	arch: 'armv7hf'
 	isDefault: true
+	state: 'experimental'
 
 	yocto:
 		machine: 'zedboard-zynq7'
