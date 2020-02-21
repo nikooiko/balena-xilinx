@@ -16,3 +16,6 @@
 [submodule "layers/meta-xilinx"]
 	path = layers/meta-xilinx
 	url = https://github.com/Xilinx/meta-xilinx.git
+[submodule "layers/oe-meta-go"]
+	path = layers/oe-meta-go
+	url = https://github.com/mem/oe-meta-go
