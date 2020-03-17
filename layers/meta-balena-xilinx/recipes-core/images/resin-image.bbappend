@@ -9,7 +9,7 @@ BALENA_BOOT_PARTITION_FILES_zedboard-zynq7 = " \
     device-trees/zedboard-zynq7.dtb:/ \
     "
 
-IMAGES_FSTYPES_append_qemu-zynq7 = " resinos-img"
+IMAGE_FSTYPES_append_qemu-zynq7 = " resinos-img"
 BALENA_BOOT_PARTITION_FILES_qemu-zynq7 = " \
     boot.bin: \
     u-boot-${MACHINE}.img:/u-boot-dtb.img \
