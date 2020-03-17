@@ -31,3 +31,7 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # Upgrade pokyuser
 RUN ["/usr/bin/distro-entry.sh", "/usr/bin/dumb-init", "--", "/usr/bin/poky-entry.py"]
 RUN usermod -aG docker pokyuser
+
+# Install project inside image
+COPY . /workdir/
+RUN chown -R pokyuser:pokyuser /workdir/
