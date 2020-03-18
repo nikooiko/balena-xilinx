@@ -1,3 +1,35 @@
 # Supported machines
 #MACHINE ?= "zedboard-zynq7"
 #MACHINE ?= "qemu-zynq7"
+
+# Resin specific distros
+DISTRO ?= "resin-systemd"
+
+# Remove the old image before the new one is generated to save disk space when RM_OLD_IMAGE is set to 1, this is an easy way to keep the DEPLOY_DIR_IMAGE clean.
+RM_OLD_IMAGE = "1"
+
+# Allow these tools to be called during build
+HOSTTOOLS += "docker iptables"
+
+# Additional image features
+USER_CLASSES ?= "buildstats image-mklibs image-prelink"
+
+# By default disable interactive patch resolution (tasks will just fail instead):
+PATCHRESOLVE = "noop"
+
+# Disk Space Monitoring during the build
+BB_DISKMON_DIRS = "\
+    STOPTASKS,${TMPDIR},1G,100K \
+    STOPTASKS,${DL_DIR},1G,100K \
+    STOPTASKS,${SSTATE_DIR},1G,100K \
+    ABORT,${TMPDIR},100M,1K \
+    ABORT,${DL_DIR},100M,1K \
+    ABORT,${SSTATE_DIR},100M,1K"
+
+CONF_VERSION = "1"
+
+# PATCHES
+# is BALENA_STORAGE definition trully needed?
+# for some reason the do_kernel_resin_aufs_fetch_and_unpack shows an error when uses
+# python-variable:balena_storage -> Exception: TypeError: must be str, not NoneType
+BALENA_STORAGE_zedboard-zynq7 = "overlay2"
