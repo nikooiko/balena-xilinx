@@ -2,7 +2,7 @@ FROM crops/poky
 
 USER root
 
-# Install Prerequisites
+# Install Prerequisites (+ vim for interractive editing)
 RUN apt-get -y update && apt-get -y install  \
     apt-transport-https \
     ca-certificates \
@@ -10,7 +10,8 @@ RUN apt-get -y update && apt-get -y install  \
     gnupg-agent \
     software-properties-common \
     jq \
-    iptables
+    iptables \
+    vim
 
 # Install docker
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - \
