@@ -4,9 +4,12 @@
 This repository is not yet ready to be used
 
 ## Build Steps
-- `sudo install -D /workdir/build`
-- `docker build -t balena-xilinx-builder -f builder/Dockerfile .`
-- `docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v /workdir/build:/workdir/build balena-xilinx-builder --workdir=/workdir`
+- `sudo install -D -d /workdir/build`
+- `source ./setup-environment`
+- `build-interractive` (host env)
+- `build-zedboard-zynq7` (builder env)
+
+NOTE: `build-help` to see all available build commands (supports host and builder)
 
 **WARNING: execute build steps at the project's root directory**
 

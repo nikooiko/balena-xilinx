@@ -1,0 +1,13 @@
+#!/bin/bash
+
+DIR=$(realpath $(dirname $0))
+
+# build the builder
+${DIR}/build-builder
+
+# start container
+docker run --rm -it \
+	--name balena-xilinx-builder-interractive \
+	-v /var/run/docker.sock:/var/run/docker.sock \
+	-v /workdir/build:/workdir/build balena-xilinx-builder \
+	--workdir=/workdir

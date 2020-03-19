@@ -1,0 +1,9 @@
+#!/bin/bash
+DIR=$(realpath $(dirname $0))
+
+export RELEASE=thud
+export HOST_BUILD_DIR=${DIR}
+
+alias build-help=${DIR}/scripts/build-help
+alias build-interractive=${DIR}/scripts/build-interractive
+alias build-builder=${DIR}/scripts/build-builder

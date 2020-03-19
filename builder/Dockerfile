@@ -33,5 +33,8 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN ["/usr/bin/distro-entry.sh", "/usr/bin/dumb-init", "--", "/usr/bin/poky-entry.py"]
 RUN usermod -aG docker pokyuser
 
+# Install builder scripts
+COPY builder/scripts/* /usr/local/bin/
+
 # Install project inside image
 COPY --chown=pokyuser:pokyuser . /workdir/

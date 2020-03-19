@@ -1,0 +1,8 @@
+#!/bin/bash
+
+[ -z "${RELEASE}" ] && echo "RELEASE is not specified" && exit 1
+
+DIR=$(realpath $(dirname $0))
+pushd ${DIR}/../
+docker build -t balena-xilinx-builder -f builder/Dockerfile .
+popd
